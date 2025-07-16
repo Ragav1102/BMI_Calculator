@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive BMI Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="scripy.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Health & Wellness</h1>
+    <p>Track your BMI and maintain a healthy lifestyle</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2><i class="bi bi-calculator"></i> BMI Calculator</h2>
+      <p>Calculate your Body Mass Index to understand your weight status and maintain a healthy lifestyle.</p>
+
+      <div class="unit-toggle">
+        <span>Imperial (ft/lbs)</span>
+        <label class="switch">
+          <input type="checkbox" id="unitSwitch" onchange="toggleUnits()">
+          <span class="slider"></span>
+        </label>
+        <span>Metric (cm/kg)</span>
+      </div>
+
+      <div class="form-group" id="heightGroup">
+        <label for="height">Height</label>
+        <div class="form-inline" id="metricHeight">
+          <input type="number" id="heightCm" placeholder="cm">
+        </div>
+        <div class="form-inline" id="imperialHeight" style="display: none;">
+          <input type="number" id="heightFt" placeholder="ft">
+          <input type="number" id="heightIn" placeholder="in">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" placeholder="Enter your weight">
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+        <button class="btn-secondary" onclick="resetForm()">Reset</button>
+      </div>
+
+      <div class="bmi-result" id="bmiResult"></div>
+    </div>
+
+    <div class="card tips">
+      <h3>Health Tips</h3>
+      <ul>
+        <li>Maintain a balanced diet with plenty of fruits and vegetables</li>
+        <li>Exercise regularly - aim for at least 150 minutes of moderate activity per week</li>
+        <li>Stay hydrated by drinking plenty of water throughout the day</li>
+        <li>Consult with healthcare professionals for personalized advice</li>
+      </ul>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
